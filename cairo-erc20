@@ -1,5 +1,5 @@
 #[starknet::contract]
-mod MyToken {
+mod multisigtoken {
     use starknet::ContractAddress;
     use openzeppelin::access::ownable::Ownable;
     use openzeppelin::token::erc20::ERC20;
@@ -14,8 +14,8 @@ mod MyToken {
         Ownable::InternalImpl::initializer(ref unsafe_ownable, owner);
 
         // Initialize ERC20
-        let name = 'multisigL2';
-        let symbol = 'multilvl';
+        let name = 'multisigL2'; // contract name
+        let symbol = 'multilvl'; // ticker
 
         let mut unsafe_erc20 = ERC20::unsafe_new_contract_state();
         ERC20::InternalImpl::initializer(ref unsafe_erc20, name, symbol);
