@@ -1,4 +1,4 @@
-#[starknet::contract]
+#[starknet::contract] //multisig
 mod multisigtoken {
     use starknet::ContractAddress;
     use openzeppelin::access::ownable::Ownable;
